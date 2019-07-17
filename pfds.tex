@@ -1,0 +1,90 @@
+\documentclass{beamer}
+ 
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor} 
+ 
+\begin{document}
+
+%Information to be included in the title page:
+\title{Purely Functional Data Structures}
+\author{Mitch Stevens}
+\date{2019}
+ 
+\newcommand{\labeledCode}[2]
+{
+  \huge \textcolor{blue!30}{#1} \colorbox{blue!30}{\texttt{#2}}
+} 
+
+\newenvironment{slide}[1]
+  { \begin{frame}
+    \frametitle{#1}
+  }
+  { \end{frame}
+  }
+
+ 
+\frame{\titlepage}
+
+\begin{slide}{something}
+  Mutable vs. Immutable \\
+  Problem set stays constant
+  Need
+\end{slide}
+
+\begin{slide}{Easy Abstract Datatypes}
+  Some ADT's translate particularly well:
+  \begin{itemise}
+  \item Linked List / Stack
+  \item Simple Trees
+  \item 
+  \end{itemise}  
+\end{slide}
+
+\begin{slide}{Harder Abstract Datatypes}
+  Others have been more of a struggle, but with the right
+\end{slide}
+
+\begin{slide}{Time Complexities}
+  What is the time complexity of `reverse :: [a] -> [a]`? \\
+  The time complexity of `\x -> let !r = reverse x in r` is $O(n)$ \\
+  Predicting evaluation is challenging in lazy langauges \\
+\end{slide}
+
+\begin{slide}{Queues}
+  \labeledCode{f}{1:2:3:[]} \labeledCode{r}{5:4:[]} \\
+  invariant: $|f| = 0 \Rightarrow |r| = 0$ \\
+  Provides $O(1)$ `head`, snoc; $O(n)$ tail
+\end{slide}
+
+\begin{slide}{}
+      
+\end{slide}
+
+\begin{slide}{}
+  
+\end{slide}
+
+
+\begin{slide}{Schedualing}
+  \begin{tabular}{ c c c }
+    Strict & Suspend & Force
+    Lazy & ??? & Eval. to WHNF
+  \end{tabular}
+  % Suspension doesn't have a name in a lazy language, all values are "suspended" by default.
+  % Metaphor of fish swimming in water, doesn't realise he is swimming in water
+
+  
+\end{slide}
+
+
+
+
+\begin{slide}{Graphs}
+  Adjacency List \\
+  \labeledCode{aaa}{Map v [v]}
+  Adjacency Matrix \\
+  \labeledCode{aaa}{Array (Int, Int) e}
+  
+\end{slide}
+
+\end{document}
